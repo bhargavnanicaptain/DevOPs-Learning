@@ -1,0 +1,80 @@
+Task -1:
+🎯 Objective:
+
+Use Go variables to track and manage multiple application versions, simulate deployment changes, and record release information like environment, author, and build number.
+
+🧱 Scenario
+
+You’re a DevOps Engineer at Sonata Software, and you’re responsible for maintaining build version info for applications being deployed to different environments (Dev, QA, and Prod).
+
+You’ll use Go variables to:
+
+Store release metadata
+
+Update version numbers
+
+Simulate deployments
+
+Print a clean deployment summary
+
+⚙️ Requirements
+
+Use constants for company name and supported environments.
+
+Use variables for:
+
+App name
+
+Version number (float)
+
+Build number (int)
+
+Deployment author
+
+Environment (string)
+
+Status (bool)
+
+Simulate:
+
+A deployment in one environment
+
+An updated version and build
+
+A rollback scenario
+
+Task - 2:
+🎯 Objective:
+
+Use functions in Go to analyze log entries, detect errors, count total issues, and print a clean summary report.
+You’ll apply:
+
+Functions with parameters
+
+Return values
+
+String operations
+
+Loops and decision-making
+
+🧱 Scenario
+
+You’re working as a DevOps engineer at Sonata Software.
+After every deployment, a log file is generated with entries like:
+
+INFO: Deployment started
+INFO: Connecting to database
+ERROR: Connection timeout
+INFO: Retrying...
+SUCCESS: Deployment completed
+
+
+You must write a Go program that:
+
+Analyzes each log entry
+
+Detects lines containing "ERROR" or "SUCCESS"
+
+Counts errors and successful operations
+
+Displays a final status summary
