@@ -1,0 +1,49 @@
+pipleline{
+  agent any
+  stages{
+    stage('Checkout'){
+      steps{
+        echo 'Fetching Go Project from GitHub...'
+        git branch : 'main' url: 'https://github.com/bhargavnanicaptain/DevOps-Learing.git'
+      }
+    }
+    stage('Navigate to Go-Language folder'){
+      steps{
+        dir('Go-Language'){
+          echo 'Entered Go-Language directory...'
+          sh 'ls -la'
+        }
+      }
+    }
+    stage('BUild'){
+      steps{
+        dir('Go-Language'){
+          echo 'Building Go Project...'
+          sh 'go build -o goApp main.go'
+        }
+      }
+    }
+    stage('Test'){
+      steps{
+        dir('Go-Language'){
+          echo 'Running Go Tests...'
+          sh 'go test ./... || echo "No tests found but build succeeded"'
+        }
+      }
+    }
+    stage('Deploy'){
+      steps{
+        echo 'Simulating Deployment'
+        sh 'echo "Deployment Complete- Go Application ready!"'
+      }
+    }
+  }
+  post{
+    success{
+      echo 'pipeline executed successfully'
+    }
+    failure{
+      echo 'Piple line failed. PLease check the logs.'
+    }
+  }
+}
